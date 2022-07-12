@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto';
+  font-style: normal;
+};
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+};
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #C0DBD9;
+  padding: 0 15px;
+};
+
+.header {
+  padding: 30.5px;
+  background: #7FAFF7;
+  &__btn {
+    width: 206px;
+    height: 39px;
+    background: #A5C7F9;
+    border: none;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 8px 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+  };
+  &__btn:hover {
+    opacity: 0.5;
+    background: rgba(64, 64, 64, 0.525);
+    transition: 400ms;
+  };
+};
+
+.main {
+  background: #B3F95A;
+  margin: 15px 0 15px;
+  counter-reset: e;
+  &__numbering {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  };
+  &__block::before {
+    counter-increment: e;
+    content: counter(e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 62px;
+    background: #8AD191;
+    font-weight: 400;
+    font-size: 53px;
+    line-height: 198px;
+    color: #FFFFFF;
+  };
+  &__block {
+    width: 160px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  };
+  &__numbering > :first-child {
+    flex-grow: 0.334;
+  };
+  &__numbering > :nth-child(2) {
+    flex-grow: 0.624;
+  };
+  &__wrapper > :first-child {
+    flex-grow: 0.982;
+  };
+};
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 0 30px;
+  background: #88B5BF;
+  &__block {
+    min-height: 199px;
+    flex-grow: 0.234;
+    background: #0D89B0;
+  };
+};
+
+.footer {
+  margin-top: 100px;
+  background: #7FAFF7;
+  &__content {
+    height: 100px;
+  };
+};
+
+.pop_up {
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  padding: 15px;
+  transform: translateX(-50%);
+  transition: opacity 500ms;
+  background: #FFFFFF;
+  &__link {
+    display: block;
+    background: #7FAFF6;
+    border-radius: 5px;
+    margin-left: 88%;
+    border: none;
+  };
+  &__link:hover {
+    opacity: 0.5;
+    background: rgba(64, 64, 64, 0.525);
+    transition: 400ms;
+  }
+  &__icon {
+    width: 43px;
+  };
+};
+
+.pop_up:target {
+  visibility: visible;
+  opacity: 1;
+};
+
+.pop_up a:hover {
+  opacity: 0.5;
+  background: rgba(64, 64, 64, 0.525);
+  transition: 400ms;
+};
+
+.pop_up h1 {
+  margin-top: 35%;
+  text-align: center;
+};
